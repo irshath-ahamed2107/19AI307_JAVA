@@ -1,35 +1,32 @@
-# Ex.No:4(D) FINAL & STATIC IN JAVA
-
+# Ex.No:4(E)  PARAMETERIZED CONSTRUCTOR
 ## AIM:
-   To create a Java program to perform final & static keyword for below situation Employee object contains member 'Emp_Id'. It contains object named name, which contains its own informations such as Fname, Mname, Lname.
- 
+To write a parameterized constructor in the Employee class that initializes name and designation, and then call getter methods in the main() method of another class (Sample) to display the values.
+
 ## ALGORITHM :
-1.	Start the Program.
-2.	Define class `Name`:
--	a) Declare three `String` variables: `Fname`, `Mname`, and `Lname`
--	b) Define method `dispName(String fn, String mn, String ln)`:
--	i) Print the full name using the passed parameters `fn`, `mn`, and `ln`
-3.	Define class `Employee`:
--	a) Declare an integer variable `Emp_Id`
--	b) Create an instance of `Name` called `obj`
--	c) Define method `disp(int id)`:
--	i) Print the employee ID
--	ii) Create a new `Name` object and call `dispName("B", "Leo", "John")` to display the name
-4.	Define `Main` class with `main` method:
--	a) Create an `Employee` object `emp`
--	b) Call `emp.disp(101)` to display the employee details
-5.	End
 
-
-
-
+	1.	Start the program.
+2.	Define a class Employee:
+    a.	  Declare two private string variables: name and designation.
+3.	Create a parameterized constructor in Employee:
+4.	Accept two parameters: name and designation.
+5.	Assign the parameters to the class fields.
+6.	Define two getter methods in the Employee class:
+     a.	getName() – returns the value of name.
+     b.	getDesg() – returns the value of designation.
+7.	Create another class Sample with the main method.
+8.	Inside the main method:
+     a.	Create an object of Employee using the constructor and pass "John" and "Asst.Manager" as arguments.
+     b.	Call getName() and store the result in a variable empName.
+     c.	Call getDesg() and store the result in a variable empDesg.
+9.	Print the values of empName and empDesg.
+10.	End the program
 
 
 ## PROGRAM:
  ```
 /*
 Program to implement a variable and operators using Java
-Developed by: N Irshath Ahamed 
+Developed by: N Irshath Ahamed
 RegisterNumber: 212224110025
 */
 ```
@@ -37,37 +34,28 @@ RegisterNumber: 212224110025
 ## Sourcecode.java:
 
 ```
-final class Student {
-    String Name;
-    String Id;
-    final String Year = "3th Year"; // Final variable with a fixed value
-
-    // Constructor to initialize Name and Id
-    Student(String Name, String Id) {
-        this.Name = Name;
-        this.Id = Id;
-    }
-
-    // Method to display the details
-    void print() {
-        System.out.println("Student Details are,");
-        System.out.println("Id is " + Id);
-        System.out.println("Name is " + Name);
-        System.out.println("Year of Studying is " + Year);
+class Student {
+String name;
+String dept;
+Student(String n,String d)
+{
+    this.name=n;
+    this.dept=d;
+}
+public void getName(){
+    System.out.println(name);
+}
+public void getDept(){
+    System.out.println(dept);
+}
+}
+public class Sample{
+    public static void main(String[] args){
+        Student obj=new Student("Antony","AIML");
+        obj.getName();
+        obj.getDept();
     }
 }
-
-// Main class to test the functionality
-public class Main {
-    public static void main(String[] args) {
-        // Create an instance of Student class with given Name and Id
-        Student student = new Student("David", "S201");
-
-        // Call the print method to display the details
-        student.print();
-    }
-}
-
 ```
 
 
@@ -75,8 +63,12 @@ public class Main {
 
 
 ## OUTPUT:
-<img width="558" alt="Image" src="https://github.com/user-attachments/assets/02e296c7-1a4b-4abf-87bd-cd67d25cc525" />
 
+<img width="521" alt="Image" src="https://github.com/user-attachments/assets/355a1bb0-9995-4a37-8a79-c9930975fb24" />
 
 ## RESULT:
-Thus, the java program to perform final & static keyword was executed successfully.
+Thus, the  java program was successfully demonstrates the use of a parameterized constructor to initialize class fields.
+
+ 
+
+
